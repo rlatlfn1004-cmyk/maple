@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>메이플 시세 기록장</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="maple-bg"></div>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">🍁 Maple Market Note</p>
+        <h1>메이플 시세 기록장</h1>
+        <p class="sub">아이템 가격을 직접 기록하고, 평균가·최저가·등락률을 한눈에 확인해요.</p>
+      </div>
+      <div class="hero-card">
+        <span>오늘의 관심템</span>
+        <strong id="todayPick">아직 없음</strong>
+        <small>가장 최근에 등록한 아이템</small>
+      </div>
+    </section>
+
+    <section class="panel form-panel">
+      <h2>시세 등록</h2>
+      <form id="priceForm">
+        <label>아이템명<input id="itemName" placeholder="예: 블랙 큐브" required /></label>
+        <label>서버<select id="server"><option>스카니아</option><option>루나</option><option>엘리시움</option><option>크로아</option><option>베라</option><option>오로라</option><option>리부트</option><option>기타</option></select></label>
+        <label>가격(메소)<input id="price" type="number" min="1" placeholder="예: 35000000" required /></label>
+        <label>메모<input id="memo" placeholder="예: 주말 저녁 기준" /></label>
+        <button type="submit">+ 기록 추가</button>
+      </form>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span>등록 건수</span><strong id="count">0</strong></div>
+      <div class="stat"><span>평균가</span><strong id="avg">0</strong></div>
+      <div class="stat"><span>최저가</span><strong id="min">0</strong></div>
+      <div class="stat"><span>최고가</span><strong id="max">0</strong></div>
+    </section>
+
+    <section class="panel">
+      <div class="list-head">
+        <h2>시세 목록</h2>
+        <input id="search" placeholder="아이템명 검색" />
+      </div>
+      <div id="priceList" class="price-list"></div>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
